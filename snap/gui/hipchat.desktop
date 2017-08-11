@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=HipChat4
+GenericName=Group Chat and IM
+Comment=Persistent group chat using XMPP.
+Exec=hipchat-jz.hipchat
+Icon=${SNAP}/meta/gui/hipchat4.png
+Terminal=false
+Categories=Network;InstantMessaging;

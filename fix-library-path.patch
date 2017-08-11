@@ -1,0 +1,30 @@
+diff -ruN stage/opt/HipChat4/bin/HipChat4 new/opt/HipChat4/bin/HipChat4
+--- stage/opt/HipChat4/bin/HipChat4	2016-12-02 21:04:13.000000000 +0000
++++ new/opt/HipChat4/bin/HipChat4	2017-08-11 06:03:36.176057753 +0000
+@@ -54,9 +54,9 @@
+ #use HipChat-distributed libstdc++ only if needed; using a version older than system causes problems
+ $thisdirectory/hellocpp
+ if [[ $? = 0 ]]
+-    then export LD_LIBRARY_PATH=$hipchatRoot/lib
++    then export LD_LIBRARY_PATH=$hipchatRoot/lib:$LD_LIBRARY_PATH
+ else
+-    export LD_LIBRARY_PATH="$hipchatRoot/lib;$hipchatRoot/lib/cpp"
++    export LD_LIBRARY_PATH="$hipchatRoot/lib;$hipchatRoot/lib/cpp;$LD_LIBRARY_PATH"
+ fi
+ 
+ export QT_XKB_CONFIG_ROOT=/usr/share/X11/xkb
+diff -ruN stage/opt/HipChat4/bin/QtWebEngineProcess new/opt/HipChat4/bin/QtWebEngineProcess
+--- stage/opt/HipChat4/bin/QtWebEngineProcess	2016-12-02 21:04:13.000000000 +0000
++++ new/opt/HipChat4/bin/QtWebEngineProcess	2017-08-11 06:03:40.888226219 +0000
+@@ -42,9 +42,9 @@
+ #use HipChat-distributed libstdc++ only if needed; using a version older than system causes problems
+ $hipchatRoot/bin/hellocpp
+ if [[ $? = 0 ]]
+-    then export LD_LIBRARY_PATH=$hipchatRoot/lib
++    then export LD_LIBRARY_PATH=$hipchatRoot/lib:$LD_LIBRARY_PATH
+ else
+-    export LD_LIBRARY_PATH="$hipchatRoot/lib:$hipchatRoot/lib/cpp"
++    export LD_LIBRARY_PATH="$hipchatRoot/lib:$hipchatRoot/lib/cpp;$LD_LIBRARY_PATH"
+ fi
+ 
+ export QT_PLUGIN_PATH=$hipchatRoot/lib/plugins
